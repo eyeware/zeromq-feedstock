@@ -23,7 +23,7 @@ requirements:
     - automake                     # [osx]
     - autoconf                     # [osx]
     - cmake                        # [win]
-    - libtool                      # [osx]
+    - libtool                      # [unix]
     - pkg-config                   # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
