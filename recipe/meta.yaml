@@ -20,8 +20,8 @@ build:
 
 requirements:
   build:
-    - automake                     # [osx]
-    - autoconf                     # [osx]
+    - automake                     # [unix]
+    - autoconf                     # [unix]
     - cmake                        # [win]
     - libtool                      # [unix]
     - pkg-config                   # [unix]
