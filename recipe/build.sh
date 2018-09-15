@@ -8,7 +8,7 @@ fi
 ./autogen.sh
 
 ./configure --prefix="$PREFIX" --with-libsodium
-make -j${CPU_COUNT} ${VERBOSE_AT}
+make -j${CPU_COUNT}
 
 make check
 make install
