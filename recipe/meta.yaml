@@ -16,7 +16,9 @@ source:
     - 0005-osx-test.patch  # [osx]
 
 build:
-  number: 1005
+  number: 1006
+  run_exports:
+    - {{ pin_compatible(name, max_pin='x.x') }}
 
 requirements:
   build:
