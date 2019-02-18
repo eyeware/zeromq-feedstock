@@ -24,6 +24,7 @@ requirements:
   build:
     - automake                     # [unix]
     - autoconf                     # [unix]
+    - make                         # [unix]
     - cmake                        # [win]
     - libtool                      # [unix]
     - pkg-config                   # [unix]
