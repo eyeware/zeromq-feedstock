@@ -44,12 +44,14 @@ test:
     - test -f ${PREFIX}/lib/libzmq.so.5      # [linux]
     - test -f ${PREFIX}/lib/libzmq.dylib     # [osx]
     - test -f ${PREFIX}/lib/libzmq.5.dylib   # [osx]
+    # Disable libsodium encryption support
     # verify libsodium is linked
-    - otool -L ${PREFIX}/lib/libzmq.dylib | grep sodium  # [osx]
-    - ldd ${PREFIX}/lib/libzmq.so | grep sodium  # [linux]
-    - test -f ${PREFIX}/lib/cmake/ZeroMQ/ZeroMQConfig.cmake         # [unix]
-    - test -f ${PREFIX}/lib/cmake/ZeroMQ/ZeroMQConfigVersion.cmake  # [unix]
-    - ${PREFIX}/bin/curve_keygen  # [unix]
+    # - otool -L ${PREFIX}/lib/libzmq.dylib | grep sodium  # [osx]
+    # - ldd ${PREFIX}/lib/libzmq.so | grep sodium  # [linux]
+    - test -f ${PREFIX}/share/cmake/ZeroMQ/ZeroMQConfig.cmake         # [unix]
+    - test -f ${PREFIX}/share/cmake/ZeroMQ/ZeroMQConfigVersion.cmake  # [unix]
+    # Disable curve encryption support
+    # - ${PREFIX}/bin/curve_keygen  # [unix]
     - if exist %LIBRARY_LIB%\libzmq-mt-s-{{ version | replace('.', '_') }}.lib (exit 0) else (exit 1)  # [win]
     - if exist %LIBRARY_BIN%\libzmq-mt-{{ version | replace('.', '_') }}.dll (exit 0) else (exit 1)    # [win]
     - if exist %LIBRARY_LIB%\libzmq-mt-{{ version | replace('.', '_') }}.lib (exit 0) else (exit 1)    # [win]

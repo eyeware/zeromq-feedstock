@@ -4,7 +4,7 @@ cd build
 set "CFLAGS=%CFLAGS% /DUNITY_EXCLUDE_STDINT_H /DUNITY_POINTER_WIDTH=64"
 set "CXXFLAGS=%CXXFLAGS% /DUNITY_EXCLUDE_STDINT_H /DUNITY_POINTER_WIDTH=64"
 
-cmake -G "NMake Makefiles" -D ENABLE_DRAFTS=OFF -D WITH_PERF_TOOL=OFF -D ZMQ_BUILD_TESTS=ON -D ENABLE_CPACK=OFF -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ..
+cmake -G "NMake Makefiles" -D ENABLE_DRAFTS=ON -D WITH_PERF_TOOL=OFF -D ZMQ_BUILD_TESTS=ON -D ENABLE_CPACK=OFF -D WITH_LIBSODIUM=OFF -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ..
 if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
@@ -68,7 +68,7 @@ REM .\bin\test_router_mandatory_hwm
 .\bin\test_security_plain
 .\bin\test_setsockopt
 .\bin\test_sockopt_hwm
-.\bin\test_sodium
+REM .\bin\test_sodium
 .\bin\test_spec_dealer
 .\bin\test_spec_pushpull
 .\bin\test_spec_rep
