@@ -23,7 +23,7 @@ build:
 requirements:
   build:
     - make                         # [unix]
-    - cmake                        # [win]
+    - cmake
     - libtool                      # [unix]
     - pkg-config                   # [unix]
     - {{ compiler('c') }}
