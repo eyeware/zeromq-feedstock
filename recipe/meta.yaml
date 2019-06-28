@@ -22,8 +22,6 @@ build:
 
 requirements:
   build:
-    - automake                     # [unix]
-    - autoconf                     # [unix]
     - make                         # [unix]
     - cmake                        # [win]
     - libtool                      # [unix]
@@ -57,8 +55,9 @@ test:
     - if exist %LIBRARY_LIB%\libzmq-mt-{{ version | replace('.', '_') }}.lib (exit 0) else (exit 1)    # [win]
     - if exist %LIBRARY_BIN%\libzmq.dll (exit 0) else (exit 1)                                         # [win]
     - if exist %LIBRARY_LIB%\libzmq.lib (exit 0) else (exit 1)                                         # [win]
-    - if exist %LIBRARY_PREFIX%\cmake\ZeroMQ\ZeroMQConfig.cmake (exit 0) else (exit 1)           # [win]
-    - if exist %LIBRARY_PREFIX%\cmake\ZeroMQ\ZeroMQConfigVersion.cmake (exit 0) else (exit 1)    # [win]
+    # TODO: check Windows CMake conventions, with or without share
+    - if exist %LIBRARY_PREFIX%\share\cmake\ZeroMQ\ZeroMQConfig.cmake (exit 0) else (exit 1)           # [win]
+    - if exist %LIBRARY_PREFIX%\share\cmake\ZeroMQ\ZeroMQConfigVersion.cmake (exit 0) else (exit 1)    # [win]
 
 about:
   home: http://zeromq.org
