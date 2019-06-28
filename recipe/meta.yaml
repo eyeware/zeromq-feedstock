@@ -29,11 +29,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - libsodium  # [not (win and vc<14)]
+    # Disable libsodium encryption support
+    # - libsodium  # [not (win and vc<14)]
     # need non-empty host to trigger the right cb3 behavior
     - vc  # [win and vc<14]
   run:
-    - libsodium
+    # Disable libsodium encryption support
+    # - libsodium
 
 test:
   commands:
