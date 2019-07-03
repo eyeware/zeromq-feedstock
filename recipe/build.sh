@@ -10,3 +10,5 @@ make -j${CPU_COUNT}
 
 make test
 make install
+
+find $PREFIX
