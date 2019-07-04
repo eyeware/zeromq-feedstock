@@ -16,6 +16,12 @@ source:
     - 0005-osx-test.patch  # [osx]
 
 build:
+  skip: true  # [win and vc<14] 
+  skip: true  # [ppc64le]
+  skip: true  # [armv7l]
+  skip: true  # [armv6l]
+  skip: true  # [linux32]
+  skip: true  # [osx]
   number: 1000
   run_exports:
     - {{ pin_compatible(name, max_pin='x.x') }}
