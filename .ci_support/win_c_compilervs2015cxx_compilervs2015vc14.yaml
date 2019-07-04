@@ -1,10 +1,9 @@
 c_compiler:
 - vs2015
 channel_sources:
-- conda-forge
-- defaults
+- conda-forge,defaults
 channel_targets:
-- eyeware
+- eyeware main
 cxx_compiler:
 - vs2015
 pin_run_as_build:
